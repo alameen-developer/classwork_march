@@ -21,7 +21,7 @@ class whatsapp1 extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('WhatsApp'),
+          title:const Text('WhatsApp'),
           bottom: const TabBar(tabs: [
             Tab(icon: Icon(Icons.people)),
             Tab(text: 'Chats'),
@@ -29,7 +29,7 @@ class whatsapp1 extends StatelessWidget {
             Tab(text: 'Calls')
           ]),
         ),
-        body: TabBarView(children: []),
+        body: TabBarView(children: const []),
       ),
     );
   }
