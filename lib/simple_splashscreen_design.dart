@@ -39,7 +39,7 @@ class simple_splashscreen extends StatelessWidget {
                   text: 'Tivi',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 40,
                     color: Colors.white,
                   ),
                   children: <TextSpan>[
