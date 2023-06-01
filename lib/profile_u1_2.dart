@@ -18,7 +18,11 @@ class profile_ui_2 extends StatelessWidget {
         title: Text('Profile'),
         actions: [
           PopupMenuButton(itemBuilder: (contest) {
-            return [];
+            return [
+              PopupMenuItem(child: Text('Settings')),
+              PopupMenuItem(child: Text('Settings')),
+              PopupMenuItem(child: Text('Settings')),
+            ];
           }),
         ],
       ),

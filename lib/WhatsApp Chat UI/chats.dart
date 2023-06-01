@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(DevicePreview(
@@ -54,8 +55,8 @@ class chats_screen extends StatelessWidget {
   var time = [
     '02:34',
     '12:34',
-    '5:05',
-    '02:34',
+    'yesterday',
+    'yesterday',
     '12:34',
     '5:05',
     '02:34',
@@ -64,31 +65,86 @@ class chats_screen extends StatelessWidget {
     '07:00'
   ];
 
+  var subicons = [
+    const Icon(
+      Icons.done_all,
+      color: Colors.green,
+      size: 17,
+    ),
+    const Icon(
+      Icons.done,
+      size: 17,
+    ),
+    const Icon(
+      Icons.phone_missed,
+      color: Colors.red,
+      size: 17,
+    ),
+    const Icon(
+      Icons.image,
+      size: 17,
+    ),
+    const Icon(
+      Icons.block,
+      size: 17,
+    ),
+    const Icon(
+      Icons.done_all,
+      color: Colors.green,
+      size: 17,
+    ),
+    const Icon(
+      Icons.done,
+      size: 17,
+    ),
+    const Icon(
+      Icons.phone_missed,
+      color: Colors.red,
+      size: 17,
+    ),
+    const Icon(
+      Icons.image,
+      size: 17,
+    ),
+    const Icon(
+      Icons.block,
+      size: 17,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('WhatsApp'),
-        actions: const [
-          Icon(Icons.search),
-          SizedBox(width: 20),
-          Icon(Icons.add),
-          SizedBox(width: 20),
-        ],
-      ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
-          return Container(height: 100,
-            child: Center(
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(dps[index]),
-                ),
-                title: Text(names[index]),
-                subtitle: Text(messages[index]),
-                trailing: Text(time[index]),
+          return ListTile(
+            leading: SizedBox(
+              width: 60,
+              height: 60,
+              child: CircleAvatar(
+                radius: 30,
+                backgroundImage: NetworkImage(dps[index]),
               ),
             ),
+            title: Text(
+              names[index],
+              style: const TextStyle(fontSize: 18),
+            ),
+            subtitle: Wrap(children: [
+              subicons[index],
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                messages[index],
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 17),
+              )
+            ]),
+            trailing: Text(time[index]),
+            dense: false,
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           );
         },
         itemCount: 10,
