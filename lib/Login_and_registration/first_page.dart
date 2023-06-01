@@ -1,21 +1,23 @@
+import 'package:classwork_march/Login_and_registration/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+import 'signup_page.dart';
 
 void main(List<String> args) {
   runApp(MaterialApp(
-    home: const LoginandRegistration(),
+    home: const LoginandSignUp(),
     theme: ThemeData(primarySwatch: Colors.green),
   ));
 }
 
-class LoginandRegistration extends StatelessWidget {
-  const LoginandRegistration({super.key});
+class LoginandSignUp extends StatelessWidget {
+  const LoginandSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Padding(
               padding: EdgeInsets.only(top: 90, bottom: 20),
@@ -48,6 +50,7 @@ class LoginandRegistration extends StatelessWidget {
               ),
               child: ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginPage11()));
                 },
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(250,40),
@@ -58,7 +61,9 @@ class LoginandRegistration extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignUpPage11()));
+              },
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(250,40),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
